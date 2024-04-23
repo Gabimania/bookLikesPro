@@ -2,12 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Book likes Pro</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1><%= "Book likes pro" %>
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<div class="container">
+    <a href="login.jsp"><button> Login</button></a>
+    <a href="register.jsp"><button> Register</button></a>
+</div>
+<a href="hello-servlet">Hello Servlet jajaja</a>
 </body>
 </html>
