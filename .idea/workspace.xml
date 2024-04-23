@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12378b6f-cfdb-4215-b992-8d311585dc28" name="Changes" comment="">
+    <list default="true" id="12378b6f-cfdb-4215-b992-8d311585dc28" name="Changes" comment="BaseModel">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
@@ -190,11 +190,24 @@
       <workItem from="1712749450609" duration="220000" />
       <workItem from="1712823784630" duration="1049000" />
       <workItem from="1713171438272" duration="1472000" />
-      <workItem from="1713869266029" duration="3792000" />
+      <workItem from="1713869266029" duration="4122000" />
     </task>
+    <task id="LOCAL-00001" summary="BaseModel">
+      <option name="closed" value="true" />
+      <created>1713873388209</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713873388209</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BaseModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="BaseModel" />
   </component>
 </project>
