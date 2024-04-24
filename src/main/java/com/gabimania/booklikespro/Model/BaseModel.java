@@ -1,6 +1,5 @@
 package com.gabimania.booklikespro.Model;
 
-import javax.imageio.IIOException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
