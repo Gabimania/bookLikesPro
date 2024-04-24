@@ -11,7 +11,7 @@
     <title>Register</title>
 </head>
 <body>
-<form>
+<form action="register" method="post">
     <input type="text" placeholder="Username" name="username" required>
     <input type="email" placeholder="Email" name="email" required>
     <input type="password" placeholder="Password" name="password" required>
