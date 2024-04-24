@@ -12,6 +12,5 @@
     <a href="login.jsp"><button> Login</button></a>
     <a href="register.jsp"><button> Register</button></a>
 </div>
-<a href="hello-servlet">Hello Servlet jajaja</a>
 </body>
 </html>

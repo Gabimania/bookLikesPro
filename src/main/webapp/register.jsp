@@ -15,6 +15,7 @@
     <input type="text" placeholder="Username" name="username" required>
     <input type="email" placeholder="Email" name="email" required>
     <input type="password" placeholder="Password" name="password" required>
+    <input type="password" placeholder="Repeat the Password" name="repassword" required>
     <input type="submit" value="Register">
 </form>
 </body>
