@@ -17,7 +17,7 @@ public class RegisterServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         BookController bookController = new BookController();
-        String username = request.getParameter("user");
+        String username = request.getParameter("username");
         String password = request.getParameter("password");
         String repassword= request.getParameter("repassword");
         String email = request.getParameter("email");
