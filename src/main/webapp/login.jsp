@@ -7,7 +7,6 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.gabimania.booklikespro.Model.BaseModel" %>
 
 <html>
 <head>
@@ -15,5 +14,10 @@
 </head>
 <body>
 <h1>Welcome to our web</h1>
+<form method="post" action="login">
+    <input type="email" placeholder="Email" name="email" required>
+    <input type="password" placeholder="Password" name="password" required>
+    <input type="submit" value="Sing in">
+</form>
 </body>
 </html>
