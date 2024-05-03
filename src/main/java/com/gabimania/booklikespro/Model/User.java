@@ -1,6 +1,8 @@
 package com.gabimania.booklikespro.Model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class User extends BaseModel{
     private int iduser;
@@ -59,6 +61,26 @@ public class User extends BaseModel{
 
     public void setDate_registration(LocalDateTime date_registration) {
         this.date_registration = date_registration;
+    }
+
+    public static List<User> getUsers(){
+        List<User> userList = new ArrayList<>();
+        List<Object> objectList = new User().readAll("select * from user");
+        return getUSer(userList, objectList);
+    }
+
+    private static List<User> getUSer(List<User> userList, List<Object> objectList) {
+        for(Object object : objectList){
+            Object[] objects= (Object[]) object;
+            User user = new User();
+            user.setIduser((int)objects[0]);
+            user.setUsername((String) objects[1]);
+            user.setEmail((String)objects[2]);
+            user.setPassword((String) objects[3]);
+            user.setDate_registration((LocalDateTime) objects[4]);
+            userList.add(user);
+        }
+        return userList;
     }
 
     @Override
