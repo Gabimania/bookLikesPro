@@ -72,11 +72,11 @@ public class User extends BaseModel{
     public static List<User> getUsers(){
         List<User> userList = new ArrayList<>();
         List<Object> objectList = new User().readAll("select * from user");
-        return getUser(userList, objectList);
+        return getUserList(userList, objectList);
     }
 
 
-    private static List<User> getUser(List<User> userList, List<Object> objectList) {
+    private static List<User> getUserList(List<User> userList, List<Object> objectList) {
         for(Object object : objectList){
             Object[] objects= (Object[]) object;
             User user = new User();

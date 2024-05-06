@@ -3,6 +3,8 @@ package com.gabimania.booklikespro.Controller;
 import com.gabimania.booklikespro.Model.Book;
 import com.gabimania.booklikespro.Model.User;
 
+import java.util.List;
+
 public class BookController {
     private User userloged;
     public boolean newUser(String username, String email, String password) {
@@ -13,5 +15,11 @@ public class BookController {
     public boolean login(String email, String password){
         this.userloged = User.login(email, password);
         return userloged!= null;
+    }
+
+    public List<Book> getAllBooks() {
+        Book book = new Book();
+        return book.getBooks();
+
     }
 }

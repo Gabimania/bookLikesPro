@@ -1,6 +1,8 @@
 package com.gabimania.booklikespro.Model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Book extends BaseModel{
 
@@ -81,6 +83,28 @@ public class Book extends BaseModel{
 
     public void setIduser(int iduser) {
         this.iduser = iduser;
+    }
+
+    public static List<Book> getBooks(){
+        List<Book>bookList = new ArrayList<>();
+        List<Object>objectList= new Book().readAll("select * from book");
+        return getBookList(bookList,objectList);
+    }
+
+    private static List<Book> getBookList(List<Book> bookList, List<Object> objectList) {
+        for(Object object: objectList){
+            Object[]objects= (Object[]) object;
+            Book book = new Book();
+            book.setIdbook((int)objects[0]);
+            book.setTitle((String) objects[1]);
+            book.setDescription((String)objects[2]);
+            book.setAuthor((String)objects[3]);
+            book.setBook_image((String)objects[4]);
+            book.setCreation_date((LocalDateTime) objects[5]);
+            book.setIduser((int)objects[6]);
+            bookList.add(book);
+        }
+        return bookList;
     }
 
     @Override
