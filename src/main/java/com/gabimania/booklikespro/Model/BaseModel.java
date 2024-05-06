@@ -18,6 +18,11 @@ public abstract class BaseModel {
 
     static {
         loadConfiguration();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private static void loadConfiguration(){
@@ -80,7 +85,7 @@ public abstract class BaseModel {
     }
 
     private boolean ejecuteQuery(String sql, Object... parametres) {
-        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             for (int i = 0; i < parametres.length; i++)
                 preparedStatement.setObject(i + 1, parametres[i]);

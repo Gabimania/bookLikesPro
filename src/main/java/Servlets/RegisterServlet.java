@@ -22,8 +22,10 @@ public class RegisterServlet extends HttpServlet {
         String repassword= request.getParameter("repassword");
         String email = request.getParameter("email");
         if (password.equals(repassword)){
-            if (bookController.newUser(username,email,password))
+            if (bookController.newUser(username,email,password)){
                 response.sendRedirect("login.jsp");
+            }
+
             else {
                 request.setAttribute("errorMessage","There was an error. Please try again later");
                 request.getRequestDispatcher("register.jsp").forward(request,response);

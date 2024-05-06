@@ -15,6 +15,12 @@ public class User extends BaseModel{
     public User() {
     }
 
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
     public User(int iduser, String username, String email, String password, LocalDateTime date_registration) {
         this.iduser = iduser;
         this.username = username;
@@ -66,10 +72,11 @@ public class User extends BaseModel{
     public static List<User> getUsers(){
         List<User> userList = new ArrayList<>();
         List<Object> objectList = new User().readAll("select * from user");
-        return getUSer(userList, objectList);
+        return getUser(userList, objectList);
     }
 
-    private static List<User> getUSer(List<User> userList, List<Object> objectList) {
+
+    private static List<User> getUser(List<User> userList, List<Object> objectList) {
         for(Object object : objectList){
             Object[] objects= (Object[]) object;
             User user = new User();
@@ -82,6 +89,18 @@ public class User extends BaseModel{
         }
         return userList;
     }
+
+    public static User login( String password, String email){
+        List<User> userList = User.getUsers();
+        for (User user: userList){
+            if(user.password.equals(password)&& user.email.equals(email)){
+                return user;
+            }
+        }
+        return null;
+    }
+
+
 
     @Override
     protected String getNameTable() {
