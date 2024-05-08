@@ -6,20 +6,36 @@ import com.gabimania.booklikespro.Model.User;
 import java.util.List;
 
 public class BookController {
-    private User userloged;
+    private User userlogged;
+
+    public BookController() {
+    }
+
     public boolean newUser(String username, String email, String password) {
         User user=new User(username, email, password);
         return user.insert("(username, email, password ) values(?,?,?)", user.getUsername(), user.getEmail(), user.getPassword() );
     }
 
     public boolean login(String email, String password){
-        this.userloged = User.login(email, password);
-        return userloged!= null;
+        this.userlogged = User.login(email, password);
+        return userlogged!= null;
     }
 
     public List<Book> getAllBooks() {
-        Book book = new Book();
-        return book.getBooks();
+        return Book.getBooks();
+
+    }
+
+    public User getUserlogged() {
+        return userlogged;
+    }
+
+    public void setUserlogged(User user) {
+        this.userlogged = user;
+    }
+
+    public boolean addBook(String title, String description, String author, String book_image){
+        return new Book().insert("(title,description, author,book_image, iduser) values(?,?,?,?,?)", title, description, author, book_image, userlogged.getIduser());
 
     }
 }

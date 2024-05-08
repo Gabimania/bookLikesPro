@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -14,12 +15,15 @@
     <a href="register.jsp"><button> Register</button></a>
 </div>
 <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+    <c:forEach var="book" items="${bookList}" >
+        <img src="assets/img/${book.getBook_image()}" class="card-img-top" alt="book-image">
+        <div class="card-body">
+            <h5 class="card-title"><c:out value="${book.getTitle()}"/></h5>
+            <p class="card-text"><c:out value="${book.getDescription()}"/></p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </c:forEach>
 </div>
+
 </body>
 </html>

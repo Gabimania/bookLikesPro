@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
-@WebServlet(name="indexservlet", value="")
+@WebServlet(name="indexservlet", value="/index")
 public class IndexServlet {
 
    public void  doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
