@@ -101,7 +101,8 @@ public class Book extends BaseModel{
             book.setAuthor((String)objects[3]);
             book.setBook_image((String)objects[4]);
             book.setCreation_date((LocalDateTime) objects[5]);
-            book.setIduser((int)objects[6]);
+            int idUser = (int)objects[6];
+            book.setIduser(idUser);
             bookList.add(book);
         }
         return bookList;

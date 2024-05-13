@@ -16,7 +16,7 @@
 </div>
 <div class="card" style="width: 18rem;">
     <c:forEach var="book" items="${bookList}" >
-        <img src="assets/img/${book.getBook_image()}" class="card-img-top" alt="book-image">
+        <img src="./assets/img/${book.getBook_image()}" class="card-img-top" alt="book-image">
         <div class="card-body">
             <h5 class="card-title"><c:out value="${book.getTitle()}"/></h5>
             <p class="card-text"><c:out value="${book.getDescription()}"/></p>

@@ -90,6 +90,12 @@ public class User extends BaseModel{
         return userList;
     }
 
+    public User getUserById(int idUser){
+        List<User>userList = new ArrayList<>();
+        List<Object>objectList = new User().readAll("select * from user where iduser = "+ idUser);
+        return getUserList(userList,objectList).get(0);
+    }
+
     public static User login( String password, String email){
         List<User> userList = User.getUsers();
         for (User user: userList){
