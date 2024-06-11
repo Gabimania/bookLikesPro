@@ -13,10 +13,7 @@
     <title>Register</title>
 </head>
 <body>
-<%
-    String tomcatUploadPath = System.getProperty("user.dir");
-    out.println(tomcatUploadPath);
-%>
+
 <form action="register" method="post">
     <input type="text" placeholder="Username" name="username" required>
     <input type="email" placeholder="Email" name="email" required>

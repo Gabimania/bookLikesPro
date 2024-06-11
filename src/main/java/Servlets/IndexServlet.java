@@ -13,11 +13,10 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
-@WebServlet(name="indexservlet", value="/index")
+@WebServlet(name="indexservlet", value="")
 public class IndexServlet extends HttpServlet {
 
    public void  doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-       Connection connection = BaseModel.getConnection();
        BookController bookController = new BookController();
        List<Book> bookList= bookController.getAllBooks();
        request.setAttribute("bookList", bookList);

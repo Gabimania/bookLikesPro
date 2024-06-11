@@ -60,5 +60,9 @@ public class BookController {
     public List<FavoriteBook> getFavoriteBooks(){
         return new FavoriteBook().getFavoriteBooks();
     }
+
+    public User getUserById(int idUser){
+        return new User().getUserById(idUser);
+    }
 }
 

@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
         if (bookController.login(password, email)) {
             HttpSession session= request.getSession();
             session.setAttribute("userLogged", bookController.getUserlogged());
-            response.sendRedirect("user.jsp");
+            response.sendRedirect("user");
         } else {
             request.setAttribute("errorMessage", "There was an error. Please try again later");
             request.getRequestDispatcher("login.jsp").forward(request, response);

@@ -16,6 +16,8 @@ public class Book extends BaseModel{
 
     private int iduser;
 
+    private int likes;
+
     public Book(int idbook, String title, String description, String author, String book_image, LocalDateTime creation_date, int iduser) {
         this.idbook = idbook;
         this.title = title;
@@ -77,12 +79,20 @@ public class Book extends BaseModel{
         this.creation_date = creation_date;
     }
 
-    public int getIduser() {
+    public int getIdUser() {
         return iduser;
     }
 
     public void setIduser(int iduser) {
         this.iduser = iduser;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     public static List<Book> getBooks(){

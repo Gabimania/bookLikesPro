@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FavoriteBook extends BaseModel{
-    private int iduser;
+    public int iduser;
     private int idbook;
     private LocalDateTime creationDate;
 
