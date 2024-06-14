@@ -10,15 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12378b6f-cfdb-4215-b992-8d311585dc28" name="Changes" comment="user Servlet">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/books.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/IndexServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/IndexServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabimania/booklikespro/Controller/BookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabimania/booklikespro/Controller/BookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabimania/booklikespro/Model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabimania/booklikespro/Model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gabimania/booklikespro/Model/FavoriteBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gabimania/booklikespro/Model/FavoriteBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/AddBookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/AddBookServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +26,7 @@
       <list>
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -215,6 +211,11 @@
       <workItem from="1715604254080" duration="17966000" />
       <workItem from="1717106315439" duration="6395000" />
       <workItem from="1717668684037" duration="2774000" />
+      <workItem from="1718117324886" duration="187000" />
+      <workItem from="1718182934381" duration="1373000" />
+      <workItem from="1718310020715" duration="1424000" />
+      <workItem from="1718353133439" duration="1610000" />
+      <workItem from="1718373968160" duration="3018000" />
     </task>
     <task id="LOCAL-00001" summary="BaseModel">
       <option name="closed" value="true" />
@@ -296,7 +297,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715683599593</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="user Servlet">
+      <option name="closed" value="true" />
+      <created>1718117486103</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1718117486103</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +340,16 @@
     <option name="LAST_COMMIT_MESSAGE" value="user Servlet" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/main/webapp/assets/js/books.js</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
         <watch expression="favoriteBook.iduser" language="JAVA" />

@@ -5,14 +5,23 @@
 <head>
     <title>Book likes Pro</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="assets/js/user.js"></script>
+    <script src="assets/js/books.js"></script>
 </head>
 <body>
 <h1>Welcome to your profile</h1>
 <h2><%= "Book likes pro" %>
 </h2>
+<a href="addBook.jsp">Add Book</a>
 <br/>
+<input type="text" id="searchInput" placeholder="Search...">
+<div id="bookContainer">
 <div class="card" style="width: 18rem;">
+
     <c:forEach var="book" items="${bookList}" >
+            <%-- <a href="idBook=${book.getIdbook()}"> --%>
+
+
         <img src="./assets/img/${book.getBook_image()}" class="card-img-top" alt="{$book.getTitle()}">
         <div class="card-body">
             <h5 class="card-title"><c:out value="${book.getTitle()}"/></h5>
@@ -39,6 +48,7 @@
             </p>
         </div>
     </c:forEach>
+</div>
 </div>
 
 </body>

@@ -31,7 +31,7 @@ public class AddBookServlet extends HttpServlet {
         String imageName = Paths.get(imagePart.getSubmittedFileName()).getFileName().toString();
         saveImageInServer(imagePart, imageName);
         bookController.addBook(title, description,author, imageName);
-        response.sendRedirect("index");
+        response.sendRedirect("user");
 
     }
     private void saveImageInServer(Part filePart, String fileName) throws IOException {
