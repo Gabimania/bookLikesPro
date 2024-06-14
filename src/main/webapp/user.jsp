@@ -32,7 +32,7 @@
             <p class="card-author"><c:out value="${book.getAuthor()}"/></p>
             <p class="card-text">Uploaded by: ${bookController.getUserById(book.getIdUser()).getUsername()}</p>
             <p id="likesManager${book.getIdbook()}">
-                ${book.getLikes()}
+                ${book.getLikeCount()}
                 <c:set var="liked" value="false"/>
                     <c:forEach items="${favoriteBooks}" var="favorBook">
                         <c:if test="${favorBook.iduser== user.iduser && favorBook.idbook == book.idbook}">

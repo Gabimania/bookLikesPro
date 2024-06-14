@@ -6,6 +6,8 @@ import java.util.List;
 
 public class Book extends BaseModel{
 
+
+
     private int idbook;
     private String title;
     private String description;
@@ -16,7 +18,7 @@ public class Book extends BaseModel{
 
     private int iduser;
 
-    private int likes;
+    private Long likeCount;
 
     public Book(int idbook, String title, String description, String author, String book_image, LocalDateTime creation_date, int iduser) {
         this.idbook = idbook;
@@ -87,17 +89,24 @@ public class Book extends BaseModel{
         this.iduser = iduser;
     }
 
-    public int getLikes() {
-        return likes;
+    public int getIduser() {
+        return iduser;
     }
 
-    public void setLikes(int likes) {
-        this.likes = likes;
+    public Long getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Long likeCount) {
+        this.likeCount = likeCount;
     }
 
     public static List<Book> getBooks(){
         List<Book>bookList = new ArrayList<>();
-        List<Object>objectList= new Book().readAll("select * from book");
+        List<Object>objectList= new Book().readAll("select book.idbook, book.title, book.description, book.author, book.book_image, book.creation_date, book.iduser, count(favorite_book.idbook) as likeCount\n" +
+                "from favorite_book \n" +
+                "inner join book on favorite_book.idbook = book.idbook\n" +
+                "group by book.idbook");
         return getBookList(bookList,objectList);
     }
 
@@ -113,6 +122,7 @@ public class Book extends BaseModel{
             book.setCreation_date((LocalDateTime) objects[5]);
             int idUser = (int)objects[6];
             book.setIduser(idUser);
+            book.setLikeCount((Long) objects[7]);
             bookList.add(book);
         }
         return bookList;
