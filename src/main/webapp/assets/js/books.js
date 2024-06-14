@@ -1,12 +1,11 @@
 function manageLikes(idBook) {
-    let baseUrl = window.location.protocol + "//" + window.location.host + "/BookLikesPro_war/favorBook?idBook=" + idBook;
+    let baseUrl = window.location.protocol + "//" + window.location.host + "/BookLikesPro_war/likes?idBook=" + idBook;
 
     fetch(baseUrl, {
         method: 'POST',
         headers: {
-            'Content-Type': 'text',
+            'Content-Type': 'text/plain', // Ajuste menor del tipo de contenido
         },
-
     })
         .then(response => response.text())
         .then(data => {
