@@ -49,7 +49,7 @@ public class BookController {
         return new FavoriteBook().insert("(idbook, iduser) values(?,?)", userlogged.getIduser(), idBook);
     }
 
-    public int getAllFavoriteBooksById(int idBook){
+    public Long getAllFavoriteBooksById(int idBook){
         return new FavoriteBook().getAllFavoritesBookById(idBook);
     }
 

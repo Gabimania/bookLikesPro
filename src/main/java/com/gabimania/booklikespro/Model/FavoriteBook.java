@@ -51,13 +51,14 @@ public class FavoriteBook extends BaseModel{
     }
 
 
-    public int getAllFavoritesBookById(int idBook){
+    public Long getAllFavoritesBookById(int idBook){
         List<Object> objectList = new FavoriteBook().readAll("select count(iduser) from favorite_book where idbook= " + idBook + " group by idbook");
-        int likes = 0;
-        for(Object object: objectList){
-            likes += (int) object;
+        Long likeCount = 0L;
+        for (Object object : objectList){
+            Object[] objects = (Object[]) object;
+            likeCount = ((Long) objects[0]);
         }
-        return likes;
+        return likeCount;
     }
 
     public boolean favoriteBookByUser(int idBook, int idUser ){

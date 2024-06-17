@@ -1,5 +1,8 @@
 function manageLikes(idBook) {
-    let baseUrl = window.location.protocol + "//" + window.location.host + "/BookLikesPro_war/likes?idBook=" + idBook;
+
+    let baseUrl = window.location.protocol + "//" + window.location.host + "/BookLikesPro_war_exploded/likes?idBook=" + idBook;
+
+
 
     fetch(baseUrl, {
         method: 'POST',

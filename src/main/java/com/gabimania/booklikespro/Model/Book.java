@@ -103,10 +103,17 @@ public class Book extends BaseModel{
 
     public static List<Book> getBooks(){
         List<Book>bookList = new ArrayList<>();
-        List<Object>objectList= new Book().readAll("select book.idbook, book.title, book.description, book.author, book.book_image, book.creation_date, book.iduser, count(favorite_book.idbook) as likeCount\n" +
-                "from favorite_book \n" +
-                "inner join book on favorite_book.idbook = book.idbook\n" +
-                "group by book.idbook");
+        List<Object>objectList= new Book().readAll("select book.idbook, \n" +
+                "       book.title, \n" +
+                "       book.description, \n" +
+                "       book.author, \n" +
+                "       book.book_image, \n" +
+                "       book.creation_date, \n" +
+                "       book.iduser, \n" +
+                "       count(favorite_book.idbook) as likeCount\n" +
+                "from book \n" +
+                "left join favorite_book on book.idbook = favorite_book.idbook\n" +
+                "group by book.idbook;");
         return getBookList(bookList,objectList);
     }
 
