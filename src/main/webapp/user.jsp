@@ -19,17 +19,17 @@
 <br/>
 <input type="text" id="searchInput" placeholder="Search...">
 <div id="bookContainer">
-<div class="card" style="width: 18rem;">
+
 
     <c:forEach var="book" items="${bookList}" >
-            <%-- <a href="idBook=${book.getIdbook()}"> --%>
+        <div class="card" style="width: 18rem;">
 
 
-        <img src="./assets/img/${book.getBook_image()}" class="card-img-top" alt="{$book.getTitle()}">
         <div class="card-body">
-            <h5 class="card-title"><c:out value="${book.getTitle()}"/></h5>
-            <p class="card-text"><c:out value="${book.getDescription()}"/></p>
-            <p class="card-author"><c:out value="${book.getAuthor()}"/></p>
+            <img src="./assets/img/${book.getBook_image()}" class="card-img-top" alt="{$book.getTitle()}">
+            <h5 class="card-title">Title: <c:out value="${book.getTitle()}"/></h5>
+            <p class="card-text">Description: <c:out value="${book.getDescription()}"/></p>
+            <p class="card-author">Author: <c:out value="${book.getAuthor()}"/></p>
             <p class="card-text">Uploaded by: ${bookController.getUserById(book.getIdUser()).getUsername()}</p>
             <p id="likesManager${book.getIdbook()}">
                 ${book.getLikeCount()}
