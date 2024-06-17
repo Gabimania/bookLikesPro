@@ -45,8 +45,9 @@ public class BookController {
         return new FavoriteBook().insert("(idbook, iduser) values(?,?)", idBook,userlogged.getIduser());
     }
 
-    public boolean deleteLike(int idBook) {
-        return new FavoriteBook().insert("(idbook, iduser) values(?,?)", idBook,userlogged.getIduser());
+    public boolean deleteLikebyId(int idBook) {
+        return new FavoriteBook().delete("idbook = ? and iduser=?", idBook, userlogged.getIduser());
+
     }
 
     public Long getAllFavoriteBooksById(int idBook){

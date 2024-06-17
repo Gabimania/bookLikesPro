@@ -26,7 +26,7 @@ public class LikesServlets extends HttpServlet {
             bookController.newLike(idBook);
             response.getWriter().write(createRedLikeManagerHtml(bookController, idBook));
         }else{
-            bookController.deleteLike(idBook);
+            bookController.deleteLikebyId(idBook);
             response.getWriter().write(createBlackLikeManagerHtml(bookController,idBook));
         }
     }
