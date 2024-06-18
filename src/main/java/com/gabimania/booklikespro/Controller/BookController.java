@@ -32,7 +32,10 @@ public class BookController {
 
     public List<Book> getAllBooks() {
         return Book.getBooks();
+    }
 
+    public List <Book> getAllBooksByUser(){
+        return Book.getBooksByUser(userlogged);
     }
 
 

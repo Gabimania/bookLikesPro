@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const books = document.querySelectorAll('.card-body');
-    console.log(books);
+
 
     searchInput.addEventListener('input', function() {
         const searchTerm = searchInput.value.trim().toLowerCase();
