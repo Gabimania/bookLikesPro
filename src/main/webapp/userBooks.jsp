@@ -14,24 +14,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <script src="assets/js/user.js"></script>
+
     <script src="assets/js/books.js"></script>
+
+
 </head>
 <body>
 <h1>Your books <c:out value="${sessionScope.userLogged.getUsername()}"/></h1>
-<div id="bookconianer">
+<div id="bookContainer">
     <c:forEach var="userBook" items="${bookUserList}">
-        <div class="card">
+        <div class="card"  style="width: 18rem;">
             <div class="card-body">
                 <img src="./assets/img/${userBook.getBook_image()}" class="card-img-top" alt="{$book.getTitle()}">
                 <h5 class="card-title">Title: <c:out value="${userBook.getTitle()}"/></h5>
                 <p class="card-text">Description: <c:out value="${userBook.getDescription()}"/></p>
                 <p class="card-author">Author: <c:out value="${userBook.getAuthor()}"/></p>
-                <p id="likesManager${Userbook.getIdbook()}">
-                        ${Userbook.getLikeCount()}
+                <p id="likesManager${userBook.getIdbook()}">
+                        ${userBook.getLikeCount()}
                     <c:set var="liked" value="false"/>
                     <c:forEach items="${favoriteBooks}" var="favorBook">
-                        <c:if test="${favorBook.iduser== user.iduser && favorBook.idbook == userBook.idbook}">
+                        <c:if test="${favorBook.iduser== userBook.iduser && favorBook.idbook == userBook.idbook}">
                             <c:set var="liked" value="true"/>
                         </c:if>
                     </c:forEach>
@@ -46,9 +48,9 @@
 
                 </p>
             </div>
-        </div>
-
     </c:forEach>
 </div>
+</div>
+
 </body>
 </html>

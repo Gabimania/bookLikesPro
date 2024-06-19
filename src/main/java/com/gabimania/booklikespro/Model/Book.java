@@ -119,9 +119,9 @@ public class Book extends BaseModel{
 
     public static List<Book> getBooksByUser(User user){
         List<Book>bookList = new ArrayList<>();
-        List<Object> objectList = new Book().readAll( "SELECT b.iduser, b.title, b.description, b.author, b.book_image, b.creation_date, b.idbook, COUNT(f.idbook) AS likeCount " +
+        List<Object> objectList = new Book().readAll( "SELECT b.idbook, b.title, b.description, b.author, b.book_image, b.creation_date, b.iduser, COUNT(f.idbook) AS likeCount " +
                 "FROM book AS b " +
-                "RIGHT JOIN favorite_book AS f ON b.idbook = f.idbook " +
+                "right JOIN favorite_book AS f ON b.idbook = f.idbook " +
                 "WHERE b.iduser = '" + user.getIduser() + "' " +
                 "GROUP BY b.iduser, b.title, b.description, b.author, b.book_image, b.creation_date, b.idbook");
 
