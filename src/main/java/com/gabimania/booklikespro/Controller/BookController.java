@@ -38,6 +38,10 @@ public class BookController {
         return Book.getBooksByUser(userlogged);
     }
 
+    public List <Book> getAllBookUserAdded(User userlogged){
+        return Book.getBooksByUserAdded(userlogged);
+    }
+
 
     public boolean addBook(String title, String description, String author, String book_image) {
         return new Book().insert("(title,description, author,book_image, iduser) values(?,?,?,?,?)", title, description, author, book_image, userlogged.getIduser());
@@ -67,6 +71,26 @@ public class BookController {
 
     public User getUserById(int idUser){
         return new User().getUserById(idUser);
+    }
+
+    public boolean editTitleBook(int id, String title) {
+        return new Book().update("title = ? where idbook = ?", title, id);
+    }
+
+    public boolean editAuthorBook(int id, String author) {
+        return new Book().update("author = ? where idbook = ?", author, id);
+    }
+
+    public boolean editDescriptionBook(int id, String description) {
+        return new Book().update("description = ? where idbook = ?", description, id);
+    }
+
+    public boolean deleteBookById(int idBook){
+        return new Book().delete("idbook= ?", idBook);
+    }
+
+    public Book getBookById(int idBook){
+        return new Book().getBookById(idBook);
     }
 }
 

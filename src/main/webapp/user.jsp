@@ -25,8 +25,8 @@
     <c:forEach var="book" items="${bookList}" >
         <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <img src="./assets/img/${book.getBook_image()}" class="card-img-top" alt="{$book.getTitle()}">
             <h5 class="card-title">Title: <c:out value="${book.getTitle()}"/></h5>
+            <img src="./assets/img/${book.getBook_image()}" class="card-img-top" alt="{$book.getTitle()}">
             <p class="card-text">Description: <c:out value="${book.getDescription()}"/></p>
             <p class="card-author">Author: <c:out value="${book.getAuthor()}"/></p>
             <p class="card-text">Uploaded by: ${bookController.getUserById(book.getIdUser()).getUsername()}</p>

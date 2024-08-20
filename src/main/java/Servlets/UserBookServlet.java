@@ -22,12 +22,8 @@ public class UserBookServlet extends HttpServlet {
         User userLogged = (User) request.getSession().getAttribute("userLogged");
         bookController.setUserlogged(userLogged);
         request.setAttribute("userLogged",userLogged);
-        List<Book> bookUserList = bookController.getAllBooksByUser();
+        List<Book> bookUserList = bookController.getAllBookUserAdded(userLogged);
         request.setAttribute("bookUserList", bookUserList);
-        List<FavoriteBook> favoriteBooks = bookController.getFavoriteBooks();
-        FavoriteBook favoriteBook = new FavoriteBook();
-        request.setAttribute("favoriteBook", favoriteBook);
-        request.setAttribute("favoriteBooks", favoriteBooks);
         request.getRequestDispatcher("userBooks.jsp").forward(request,response);
     }
 

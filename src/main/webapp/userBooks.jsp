@@ -14,14 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href = "assets/css/userBook.css">
 
     <script src="assets/js/books.js"></script>
 
 
 </head>
 <body>
-<h1>Your books <c:out value="${sessionScope.userLogged.getUsername()}"/></h1>
-<div id="bookContainer">
+<h1>The books that you have added,  <c:out value="${sessionScope.userLogged.getUsername()}"/></h1>
+<div  id="bookInfoDiv" class="card-deck mt-4">
     <c:forEach var="userBook" items="${bookUserList}">
         <div class="card"  style="width: 18rem;">
             <div class="card-body">
@@ -29,24 +30,19 @@
                 <h5 class="card-title">Title: <c:out value="${userBook.getTitle()}"/></h5>
                 <p class="card-text">Description: <c:out value="${userBook.getDescription()}"/></p>
                 <p class="card-author">Author: <c:out value="${userBook.getAuthor()}"/></p>
-                <p id="likesManager${userBook.getIdbook()}">
-                        ${userBook.getLikeCount()}
-                    <c:set var="liked" value="false"/>
-                    <c:forEach items="${favoriteBooks}" var="favorBook">
-                        <c:if test="${favorBook.iduser== userBook.iduser && favorBook.idbook == userBook.idbook}">
-                            <c:set var="liked" value="true"/>
-                        </c:if>
-                    </c:forEach>
-                    <c:choose>
-                        <c:when test="${liked eq true}">
-                            <i onclick="manageLikes(${userBook.idbook})" class="fa-solid fa-heart" style="color: red"></i>
-                        </c:when>
-                        <c:otherwise>
-                            <i onclick="manageLikes(${userBook.idbook})" class="fa-solid fa-heart"></i>
-                        </c:otherwise>
-                    </c:choose>
-
-                </p>
+                <i onclick="showEditForm(${userBook.getIdbook()})" class="fa-solid fa-file-pen"></i>
+                <i onclick="deleteBook(${userBook.getIdbook()})" class="fa-solid fa-trash"></i>
+            </div>
+            <div id="modalContainer${userBook.getIdbook()}" class="modal-container">
+                <div id="editForm" class="modal-content">
+                    <form method="post" action="editBook">
+                        <input type="hidden" name="id" value="${userBook.getIdbook()}">
+                        <input type="text" name="title" value="${userBook.getTitle()}">
+                        <input type="text" name="author" value="${userBook.getAuthor()}">
+                        <input type="text" name="description" value="${userBook.getDescription()}">
+                        <input onclick="hideEditForm(${userBook.getIdbook()})" type="submit" value="Save">
+                    </form>
+                </div>
             </div>
     </c:forEach>
 </div>

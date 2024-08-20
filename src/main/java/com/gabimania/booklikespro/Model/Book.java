@@ -122,11 +122,31 @@ public class Book extends BaseModel{
         List<Object> objectList = new Book().readAll( "SELECT b.idbook, b.title, b.description, b.author, b.book_image, b.creation_date, b.iduser, COUNT(f.idbook) AS likeCount " +
                 "FROM book AS b " +
                 "right JOIN favorite_book AS f ON b.idbook = f.idbook " +
-                "WHERE b.iduser = '" + user.getIduser() + "' " +
+                "WHERE f.iduser = '" + user.getIduser() + "' " +
                 "GROUP BY b.iduser, b.title, b.description, b.author, b.book_image, b.creation_date, b.idbook");
 
         return getBookList(bookList,objectList);
     }
+
+
+    public static List<Book> getBooksByUserAdded(User user){
+        List<Book>bookList = new ArrayList<>();
+        List<Object> objectList = new Book().readAll( "SELECT b.idbook, b.title, b.description, b.author, b.book_image, b.creation_date, b.iduser " +
+                "FROM book AS b " +
+                "WHERE b.iduser = '" + user.getIduser() + "'");
+
+        return getBookListUserAdded(bookList,objectList);
+    }
+
+    public Book getBookById(int idBook){
+        List<Book> bookList = new ArrayList<>();
+        List<Object> objectList = new Book().readAll("SELECT b.idbook, b.title, b.description, b.author, b.book_image, b.creation_date, b.iduser " +
+                "FROM book AS b " +
+                "WHERE b.idbook = '" + idBook + "'");
+        return getBookListUserAdded(bookList, objectList).get(0);
+    }
+
+
 
     private static List<Book> getBookList(List<Book> bookList, List<Object> objectList) {
         for(Object object: objectList){
@@ -141,6 +161,23 @@ public class Book extends BaseModel{
             int idUser = (int)objects[6];
             book.setIduser(idUser);
             book.setLikeCount((Long) objects[7]);
+            bookList.add(book);
+        }
+        return bookList;
+    }
+
+    private static List<Book> getBookListUserAdded(List<Book> bookList, List<Object>objectList){
+        for(Object object: objectList) {
+            Object[] objects = (Object[]) object;
+            Book book = new Book();
+            book.setIdbook((int) objects[0]);
+            book.setTitle((String) objects[1]);
+            book.setDescription((String) objects[2]);
+            book.setAuthor((String) objects[3]);
+            book.setBook_image((String) objects[4]);
+            book.setCreation_date((LocalDateTime) objects[5]);
+            int idUser = (int) objects[6];
+            book.setIduser(idUser);
             bookList.add(book);
         }
         return bookList;
