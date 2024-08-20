@@ -1,12 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: gabri
-  Date: 18/06/2024
-  Time: 16:17
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>User Books</title>
@@ -14,17 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" href = "assets/css/userBook.css">
-
+    <link rel="stylesheet" href="assets/css/userBook.css">
     <script src="assets/js/books.js"></script>
-
-
 </head>
 <body>
-<h1>The books that you have added,  <c:out value="${sessionScope.userLogged.getUsername()}"/></h1>
-<div  id="bookInfoDiv" class="card-deck mt-4">
+<h1>The books that you have added, <c:out value="${sessionScope.userLogged.getUsername()}"/></h1>
+<a href="user"> <button>Home</button></a>
+<div id="bookInfoDiv" class="card-deck mt-4">
     <c:forEach var="userBook" items="${bookUserList}">
-        <div class="card"  style="width: 18rem;">
+        <div class="card">
             <div class="card-body">
                 <img src="./assets/img/${userBook.getBook_image()}" class="card-img-top" alt="{$book.getTitle()}">
                 <h5 class="card-title">Title: <c:out value="${userBook.getTitle()}"/></h5>
@@ -44,9 +36,8 @@
                     </form>
                 </div>
             </div>
+        </div>
     </c:forEach>
 </div>
-</div>
-
 </body>
 </html>

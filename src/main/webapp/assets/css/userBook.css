@@ -1,3 +1,92 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin: 20px 0;
+}
+
+/* Estilo para el botón de "Home" */
+a button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+a button:hover {
+    background-color: #218838;
+}
+
+/* Contenedor para las tarjetas de libros */
+#bookInfoDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px; /* Espacio entre las tarjetas */
+}
+
+/* Estilo para cada tarjeta de libro */
+.card {
+    width: 12rem; /* Ancho reducido de la tarjeta */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 10px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 8rem; /* Altura reducida de la imagen */
+    object-fit: cover; /* Ajusta la imagen dentro del contenedor */
+}
+
+.card-body {
+    padding: 10px; /* Padding reducido */
+}
+
+.card-title {
+    font-size: 1rem; /* Tamaño de fuente reducido */
+    color: #007bff;
+    margin-bottom: 0.5rem; /* Margen inferior reducido */
+}
+
+.card-text {
+    font-size: 0.8rem; /* Tamaño de fuente reducido */
+    margin-bottom: 0.5rem; /* Margen inferior reducido */
+}
+
+.card-author {
+    font-style: italic;
+    font-size: 0.8rem; /* Tamaño de fuente reducido */
+}
+
+/* Estilo para los íconos de edición y eliminación */
+.card-body i {
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1rem; /* Tamaño de íconos reducido */
+    color: #007bff;
+}
+
+.card-body i:hover {
+    color: #0056b3;
+}
+
+/* Estilos para el contenedor del modal */
 .modal-container {
     display: none;
     position: fixed;
@@ -11,25 +100,38 @@
     align-items: center;
 }
 
-
+/* Estilos para el contenido del modal */
 .modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 280px; /* Ajusta el ancho según sea necesario */
 }
 
+/* Estilo para los campos del formulario del modal */
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Mostrar el modal */
 .modal-container.active {
     display: flex;
-}
-
-.card-deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.card {
-    width: 30%;
-    margin-bottom: 20px;
 }

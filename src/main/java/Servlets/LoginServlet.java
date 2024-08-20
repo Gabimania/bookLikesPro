@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("user");
         } else {
             request.setAttribute("errorMessage", "There was an error. Please try again later");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }
 }

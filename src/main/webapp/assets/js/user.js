@@ -6,16 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     searchInput.addEventListener('input', function() {
         const searchTerm = searchInput.value.trim().toLowerCase();
 
-        // Filtra los libros que coincidan con el término de búsqueda
+
         books.forEach(book => {
             const title = book.querySelector('.card-title').innerText.toLowerCase();
             const author = book.querySelector('.card-author').innerText.toLowerCase();
 
-            // Muestra u oculta el libro según si coincide con el término de búsqueda
+
             if (title.includes(searchTerm) || author.includes(searchTerm)){
-                book.style.display = 'block'; // Muestra el libro
+                book.style.display = 'block';
             } else {
-                book.style.display = 'none'; // Oculta el libro
+                book.style.display = 'none';
             }
         });
     });
