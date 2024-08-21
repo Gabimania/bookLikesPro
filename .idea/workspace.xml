@@ -9,22 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12378b6f-cfdb-4215-b992-8d311585dc28" name="Changes" comment="Like and delete Book">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/addBook.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/register.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/user.css" afterDir="false" />
+    <list default="true" id="12378b6f-cfdb-4215-b992-8d311585dc28" name="Changes" comment="Css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addBook.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addBook.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/userBook.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/userBook.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/userBooks.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userBooks.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Servlets/DeleteBookServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Servlets/DeleteBookServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +230,7 @@
       <workItem from="1723723038004" duration="656000" />
       <workItem from="1723805256784" duration="8451000" />
       <workItem from="1723834334839" duration="3091000" />
-      <workItem from="1723897342287" duration="9001000" />
+      <workItem from="1723897342287" duration="13640000" />
     </task>
     <task id="LOCAL-00001" summary="BaseModel">
       <option name="closed" value="true" />
@@ -413,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724147129285</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Css">
+      <option name="closed" value="true" />
+      <created>1724230661749</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1724230661749</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +445,8 @@
     <MESSAGE value="Search Books" />
     <MESSAGE value="UserBooks" />
     <MESSAGE value="Like and delete Book" />
-    <option name="LAST_COMMIT_MESSAGE" value="Like and delete Book" />
+    <MESSAGE value="Css" />
+    <option name="LAST_COMMIT_MESSAGE" value="Css" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

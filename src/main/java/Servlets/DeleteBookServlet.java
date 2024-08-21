@@ -75,8 +75,8 @@ public class DeleteBookServlet extends HttpServlet {
     }
 
     private void deleteImage(String fileName) {
-        String serverPath = System.getProperty("user.dir") + "/../webapps/BookLikesPro_war/assets/imag";
-        String localPath = System.getProperty("user.home") + "/IdeaProjects/BookLikesPro/src/main/webapp/assets/imag";
+        String serverPath = System.getProperty("user.dir") + "/../webapps/BookLikesPro_war/assets/img";
+        String localPath = System.getProperty("user.home") + "/IdeaProjects/BookLikesPro/src/main/webapp/assets/img";
         File fileToDeleteServer = new File(serverPath, fileName);
         File fileToDeleteLocal = new File(localPath, fileName);
         fileToDeleteLocal.delete();
